@@ -1,5 +1,5 @@
 # 原型链
-原型链是js实现继承的途径。
+原型链是js实现继承的着力点。
 
 ## 主要涉及到：
 * prototype
@@ -7,6 +7,7 @@
 * constructir
 * Object.setPrototypeOf()
 * Object.getPrototypeOf()
+* Object.create()
 * instanceof
 
 ### prototype
@@ -41,6 +42,18 @@ console.log(volvoCar.constructor === car) // true
 字面意思，具体用法：
 * https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf
 * https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/GetPrototypeOf
+
+### Object.create()
+Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。
+```javascript
+const a = {
+    val: 'val of a'
+}
+const b = Object.create(a)
+console.log(b.__proto__ === a) //true
+```
+文档：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create
+
 
 ### instanceof
 判断一个对象是否是某一个构造函数的实例对象（存在继承关系），继承就是指在原型链上能够找到该构造函数的原型对象。instanceof是顺着原型链依次向最原始的原型查找，直到找到该原型对象，如果一直没找到，就表示并非是该构造函数的一个实例对象。
