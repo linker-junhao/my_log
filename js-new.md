@@ -48,3 +48,4 @@ new的关键点：
 
 ## 一些感想
 有没有想过为什么可以new Array()，new Object()， new Boolean，new Function()，因为Array，Object，Boolean，Function本身的类型就是函数啊，所以可以使用new操作。
+那么是不是所有的函数都可以作为constructor来构造对象呢？显然不是，比如new parseInt()就不行。
