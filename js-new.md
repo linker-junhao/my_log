@@ -48,4 +48,9 @@ new的关键点：
 
 ## 一些感想
 有没有想过为什么可以new Array()，new Object()， new Boolean，new Function()，因为Array，Object，Boolean，Function本身的类型就是函数啊，所以可以使用new操作。
-那么是不是所有的函数都可以作为constructor来构造对象呢？显然不是，比如new parseInt()就不行。
+那么是不是所有的函数都可以作为constructor来构造对象呢？显然不是，比如new parseInt()就不行。  
+## ES6+的构造函数和可调用函数的区分：
+* 箭头函数、在class或object中定义的函数都是不可用来作为构造函数。
+* 通过class语法创建的函数不能直接调用，只能new语法使用。
+* 除非这个函数额外有所说明，js内建的函数都是不可以用作构造的。
+* 除上述情况外，其它方式创建的函数都既可以调用也可以构造。
